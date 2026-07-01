@@ -5,16 +5,17 @@ export function clamp(value: number, min = 0, max = 100): number {
   return Math.min(max, Math.max(min, value));
 }
 
-/** it-IT integer formatting → dot thousands separators (e.g. 20000 → "20.000"). */
-const itFormatter = new Intl.NumberFormat("it-IT", {
-  maximumFractionDigits: 0,
-  // Force dot separators even for 4-digit values (it-IT skips grouping there
-  // by default, so 2355 would render "2355" instead of the wanted "2.355").
-  useGrouping: "always",
-});
-
+/**
+ * it-IT integer formatting → dot thousands separators (e.g. 20000 → "20.000",
+ * 2355 → "2.355"). Done manually rather than via Intl.NumberFormat because the
+ * it-IT locale omits grouping for 4-digit values, and the `useGrouping:"always"`
+ * option isn't typed under older TS libs — this keeps the wanted formatting
+ * without a locale/type dependency.
+ */
 export function formatItNumber(value: number): string {
-  return itFormatter.format(Math.round(value));
+  const n = Math.round(Math.abs(value));
+  const grouped = n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+  return value < 0 ? `-${grouped}` : grouped;
 }
 
 /** Money in it-IT with a currency glyph prefix (default "€"). */
