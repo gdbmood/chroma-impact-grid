@@ -45,8 +45,8 @@ export function BookmarkButton({
 /** Location row with a pin icon. */
 export function LocationRow({ location }: { location: string }) {
   return (
-    <div className="flex items-center gap-1.5 text-sm text-white/60">
-      <PinIcon className="h-4 w-4 shrink-0 text-white/50" />
+    <div className="flex items-center gap-1.5 text-sm text-white/80">
+      <PinIcon className="h-4 w-4 shrink-0 text-white/70" />
       <span className="truncate">{location}</span>
     </div>
   );
@@ -70,14 +70,14 @@ export function ProgressBar({
       aria-valuenow={Math.round(value)}
       aria-valuemin={0}
       aria-valuemax={100}
-      className="h-1.5 w-full overflow-hidden rounded-full bg-white/10"
+      className="h-1.5 w-full overflow-hidden rounded-full bg-black/30"
     >
       <div
         className="h-full rounded-full"
         style={{
           width: `${value}%`,
-          background: "rgba(var(--accent-rgb), 0.95)",
-          boxShadow: "0 0 10px 0 rgba(var(--accent-rgb), 0.55)",
+          background: "rgba(255, 255, 255, 0.95)",
+          boxShadow: "0 0 10px 0 rgba(255, 255, 255, 0.55)",
         }}
       />
     </div>
@@ -100,7 +100,7 @@ export function OrgRow({
         loading="lazy"
         className="h-6 w-6 rounded-full border border-white/15 object-cover"
       />
-      <span className="truncate text-sm font-medium text-white/80">{name}</span>
+      <span className="truncate text-sm font-medium text-white/90">{name}</span>
     </div>
   );
 }

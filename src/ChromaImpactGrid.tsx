@@ -55,7 +55,7 @@ const ITEMS: Array<Donation | Volunteer> = [
   {
     kind: "donation",
     id: "helping-street-dogs",
-    accent: "#f59e0b", // amber
+    accent: "#22c55e", // green
     image: hero("street-dogs"),
     title: "Helping Street Dogs",
     location: "Tetouan, Morocco",
@@ -66,7 +66,7 @@ const ITEMS: Array<Donation | Volunteer> = [
   {
     kind: "volunteer",
     id: "lettori-ospedale",
-    accent: "#8b5cf6", // violet
+    accent: "#6366f1", // indigo
     image: hero("hospital-readers"),
     title: "Lettori ad alta voce in ospedale",
     location: "Napoli, Italy",
@@ -77,7 +77,7 @@ const ITEMS: Array<Donation | Volunteer> = [
   {
     kind: "donation",
     id: "zero-pollution",
-    accent: "#06b6d4", // cyan
+    accent: "#14b8a6", // teal-green
     image: hero("zero-pollution"),
     title: "Zero Pollution",
     location: "Tetouan, Morocco",
@@ -88,7 +88,7 @@ const ITEMS: Array<Donation | Volunteer> = [
   {
     kind: "volunteer",
     id: "spesa-cuore",
-    accent: "#38bdf8", // sky
+    accent: "#0ea5e9", // sky-blue
     image: hero("grocery-help"),
     title: "La spesa che scalda il cuore",
     location: "Napoli, Italy",
@@ -99,7 +99,7 @@ const ITEMS: Array<Donation | Volunteer> = [
   {
     kind: "donation",
     id: "strada-campus",
-    accent: "#f43f5e", // rose
+    accent: "#16a34a", // green
     image: hero("campus-future"),
     title: "Dalla strada al Campus: il Futuro inizia sui banchi",
     location: "Firenze, Italia",
@@ -110,7 +110,7 @@ const ITEMS: Array<Donation | Volunteer> = [
   {
     kind: "volunteer",
     id: "alfabetizzazione-digitale",
-    accent: "#6366f1", // indigo
+    accent: "#3b82f6", // blue
     image: hero("digital-literacy"),
     title: "Alfabetizzazione digitale per la terza età",
     location: "Roma, Italy",
@@ -124,7 +124,7 @@ const ITEMS: Array<Donation | Volunteer> = [
   {
     kind: "volunteer",
     id: "pulizia-urbana",
-    accent: "#84cc16", // lime
+    accent: "#2563eb", // blue
     image: hero("urban-cleanup"),
     title: "Sabato di pulizia urbana",
     location: "Napoli, Italy",

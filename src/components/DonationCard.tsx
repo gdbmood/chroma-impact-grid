@@ -55,7 +55,7 @@ export function DonationCard({
         <span className="text-xl font-extrabold text-white">
           {formatMoney(raised, currency)}
         </span>
-        <span className="pb-0.5 text-sm text-white/50">
+        <span className="pb-0.5 text-sm text-white/75">
           su {currency}
           {formatItNumber(goal)}
         </span>

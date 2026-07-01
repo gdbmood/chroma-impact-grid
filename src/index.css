@@ -69,20 +69,31 @@ body {
     transform: scale(1.035);
   }
 
-  /* Frosted-glass footer over a bottom-up accent wash + top hairline. */
+  /* Vivid accent gradient footer (green for donations, blue for volunteering)
+     with a frosted top edge so it still reads as glass over the image. */
   .chroma-card__footer {
     background:
       linear-gradient(
-        0deg,
-        rgba(var(--accent-rgb), 0.2) 0%,
-        rgba(var(--accent-rgb), 0.06) 45%,
-        rgba(10, 10, 12, 0.2) 100%
+        155deg,
+        rgba(var(--accent-rgb), 0.95) 0%,
+        rgba(var(--accent-rgb), 0.72) 45%,
+        rgba(var(--accent-rgb), 0.55) 100%
       ),
-      rgba(10, 10, 12, 0.62);
-    backdrop-filter: blur(16px) saturate(1.1);
-    -webkit-backdrop-filter: blur(16px) saturate(1.1);
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+      rgba(10, 10, 12, 0.35);
+    backdrop-filter: blur(10px) saturate(1.15);
+    -webkit-backdrop-filter: blur(10px) saturate(1.15);
+    border-top: 1px solid rgba(255, 255, 255, 0.22);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.14);
+  }
+
+  /* Soft accent bleed rising from the footer into the image above it. */
+  .chroma-card__wash {
+    background: linear-gradient(
+      0deg,
+      rgba(var(--accent-rgb), 0.55) 0%,
+      rgba(var(--accent-rgb), 0.12) 55%,
+      transparent 100%
+    );
   }
 
   /* ---- Spotlight overlay ------------------------------------------------- */

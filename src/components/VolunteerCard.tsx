@@ -52,7 +52,7 @@ export function VolunteerCard({
         <span className="text-base font-bold text-white">
           {formatItNumber(volunteersJoined)} volontari partecipano
         </span>
-        <span className="pb-0.5 whitespace-nowrap text-sm text-white/50">
+        <span className="pb-0.5 whitespace-nowrap text-sm text-white/80">
           / {formatItNumber(volunteersNeeded)}
         </span>
       </div>

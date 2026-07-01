@@ -60,7 +60,13 @@ export function ChromaCard({
         <BookmarkButton isSaved={isSaved} onToggle={onToggleSave} />
       </div>
 
-      {/* Frosted-glass footer. */}
+      {/* Accent bleed rising into the image above the footer. */}
+      <div
+        aria-hidden
+        className="chroma-card__wash pointer-events-none absolute inset-x-0 bottom-0 z-[5] h-56"
+      />
+
+      {/* Frosted colored footer. */}
       <div className="chroma-card__footer absolute inset-x-0 bottom-0 z-10 flex flex-col gap-3 p-4 pt-5">
         {children}
       </div>
