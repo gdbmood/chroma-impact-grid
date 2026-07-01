@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm create *)",
+      "Bash(npm install *)",
+      "Bash(cd \"/Users/gdbmood/Desktop/cards example\" && head -40 /Users/gdbmood/.npm/_logs/2026-07-01T17_25_06_271Z-eresolve-report.txt)"
+    ]
+  }
+}

@@ -1,0 +1,125 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: #0a0a0b;
+  color: #fff;
+  font-family: theme("fontFamily.sans");
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@layer components {
+  /* ---- Card shell -------------------------------------------------------- */
+  .chroma-card {
+    --accent-rgb: 16, 185, 129;
+    border-radius: 22px;
+    transition:
+      transform 0.35s cubic-bezier(0.22, 0.61, 0.36, 1),
+      box-shadow 0.35s ease;
+    box-shadow:
+      0 1px 0 rgba(255, 255, 255, 0.04),
+      0 18px 40px -22px rgba(0, 0, 0, 0.9);
+  }
+
+  .chroma-card:hover,
+  .chroma-card:focus-within {
+    transform: translateY(-5px);
+    box-shadow:
+      0 22px 55px -18px rgba(var(--accent-rgb), 0.5),
+      0 0 0 1px rgba(var(--accent-rgb), 0.18),
+      0 0 44px -6px rgba(var(--accent-rgb), 0.28);
+  }
+
+  /* Gradient border: bright accent at top → transparent lower down. */
+  .chroma-card__frame {
+    border-radius: 22px;
+    padding: 1.5px;
+    background: linear-gradient(
+      180deg,
+      rgba(var(--accent-rgb), 0.9) 0%,
+      rgba(var(--accent-rgb), 0.28) 34%,
+      rgba(255, 255, 255, 0.05) 100%
+    );
+  }
+
+  .chroma-card__inner {
+    border-radius: 20.5px;
+    overflow: hidden;
+    background: #0c0c0e;
+  }
+
+  .chroma-card__img {
+    transition: transform 0.55s cubic-bezier(0.22, 0.61, 0.36, 1);
+    will-change: transform;
+  }
+  .chroma-card:hover .chroma-card__img {
+    transform: scale(1.035);
+  }
+
+  /* Frosted-glass footer over a bottom-up accent wash + top hairline. */
+  .chroma-card__footer {
+    background:
+      linear-gradient(
+        0deg,
+        rgba(var(--accent-rgb), 0.2) 0%,
+        rgba(var(--accent-rgb), 0.06) 45%,
+        rgba(10, 10, 12, 0.2) 100%
+      ),
+      rgba(10, 10, 12, 0.62);
+    backdrop-filter: blur(16px) saturate(1.1);
+    -webkit-backdrop-filter: blur(16px) saturate(1.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  }
+
+  /* ---- Spotlight overlay ------------------------------------------------- */
+  .chroma-spotlight {
+    position: absolute;
+    inset: 0;
+    z-index: 30;
+    border-radius: inherit;
+    backdrop-filter: grayscale(1) brightness(0.62);
+    -webkit-backdrop-filter: grayscale(1) brightness(0.62);
+    -webkit-mask-image: radial-gradient(
+      circle var(--r) at var(--x) var(--y),
+      transparent 0%,
+      transparent 52%,
+      rgba(0, 0, 0, 0.78) 80%,
+      #000 100%
+    );
+    mask-image: radial-gradient(
+      circle var(--r) at var(--x) var(--y),
+      transparent 0%,
+      transparent 52%,
+      rgba(0, 0, 0, 0.78) 80%,
+      #000 100%
+    );
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chroma-card,
+  .chroma-card__img {
+    transition: none !important;
+  }
+  .chroma-card:hover,
+  .chroma-card:focus-within {
+    transform: none;
+  }
+  .chroma-card:hover .chroma-card__img {
+    transform: none;
+  }
+}
